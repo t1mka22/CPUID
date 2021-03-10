@@ -1,5 +1,4 @@
 ﻿  Source.c
-C:\Users\User\source\repos\lab_1_SP\lab_1_SP\Source.c(7,8): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
-C:\Users\User\source\repos\lab_1_SP\lab_1_SP\Source.c(63,27): warning C4013: Splitting_Bits: нет определения; предполагается "extern" с возвратом типа "int"
-C:\Users\User\source\repos\lab_1_SP\lab_1_SP\Source.c(199): warning C4716: CPUID_3: должна возвращать значение
-  lab_1_SP.vcxproj -> C:\Users\User\source\repos\lab_1_SP\Debug\lab_1_SP.exe
+C:\Users\User\Documents\GitHub\CPUID\lab_1_SP\lab_1_SP\Source.c(7,8): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\User\Documents\GitHub\CPUID\lab_1_SP\lab_1_SP\Source.c(63,27): warning C4013: Splitting_Bits: нет определения; предполагается "extern" с возвратом типа "int"
+  lab_1_SP.vcxproj -> C:\Users\User\Documents\GitHub\CPUID\lab_1_SP\Debug\lab_1_SP.exe

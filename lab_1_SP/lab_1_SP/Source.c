@@ -116,7 +116,7 @@ int CPUID_1() {
 			printf("%xh ", temp);
 		}
 		printf("\n");
-		
+
 
 	}
 
@@ -140,7 +140,7 @@ int CPUID_2() {
 
 	//EAX
 	{
-		
+
 		int temp = Splitting_Bits(i, 24, 31);
 		printf("EAX: %xh ", temp);
 		temp = Splitting_Bits(i, 16, 23);
@@ -149,20 +149,20 @@ int CPUID_2() {
 		printf("%xh ", temp);
 		temp = Splitting_Bits(i, 0, 7);
 		printf("%xh\n", temp);
-				
+
 	}
 
 	//EBX
 	{
 		int temp = Splitting_Bits(j, 24, 31);
-		printf("EAX: %xh ", temp);
+		printf("EBX: %xh ", temp);
 		temp = Splitting_Bits(j, 16, 23);
 		printf("%xh ", temp);
 		temp = Splitting_Bits(j, 8, 15);
 		printf("%xh ", temp);
 		temp = Splitting_Bits(j, 0, 7);
 		printf("%xh\n", temp);
-		//printf("\n");
+		
 	}
 
 	//ECX
@@ -179,14 +179,14 @@ int CPUID_2() {
 
 	//EDX
 	{
-		int temp = Splitting_Bits(k, 0, 7);
+		int temp = Splitting_Bits(k, 24, 31);
 		printf("EDX: %xh ", temp);
-		temp = Splitting_Bits(k, 8, 15);
-		printf("%xh ", temp);
 		temp = Splitting_Bits(k, 16, 23);
 		printf("%xh ", temp);
-		temp = Splitting_Bits(k, 24, 31);
-		printf("%xh\n", temp); 
+		temp = Splitting_Bits(k, 8, 15);
+		printf("%xh ", temp);
+		temp = Splitting_Bits(k, 0, 7);
+		printf("%xh\n", temp);
 
 	}
 
@@ -195,6 +195,33 @@ int CPUID_2() {
 };
 
 int CPUID_3() {
+	system("cls");
+
+	printf("Proccessor Serial Number: \n");
+	int i, j, k, l = 0;
+	_asm {
+		mov eax, 3;
+		cpuid;
+		mov i, eax;
+		mov j, ebx;
+		mov l, ecx;
+		mov k, edx;
+	}
+	
+	short  temp = Splitting_Bits(i, 0, 15);
+	printf("Processor Serial Number: %04x - ", temp);
+	temp = Splitting_Bits(i, 16, 31);
+	printf("%04x - ", temp);
+	temp = Splitting_Bits(l, 0, 15);
+	printf("%04x - ", temp);
+	temp = Splitting_Bits(l, 16, 31);
+	printf("%04x - ", temp);
+	temp = Splitting_Bits(k, 0, 15);
+	printf("%04x - ", temp);
+	temp = Splitting_Bits(k, 16, 31);
+	printf("%04x\n", temp);
+
+	system("pause");
 
 }
 
